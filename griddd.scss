@@ -1,0 +1,100 @@
+$width: 96%; //Container Width
+$gutter: 0.5; //gutter size
+$columns: 12; //number of columns
+$slug: is !default; // change it to col if you're comfortable
+$breakpoint-md:  600px;  // tablets
+$breakpoint-lg: 768px; // desktop
+$breakpoint-xlg: 1600px; //HD
+
+html,
+body {
+  margin: 0px;
+}
+/* For mobile phones: */
+.container {
+  width: $width + (100% - $width);
+  margin: auto;
+}
+.columns {
+  display: block;
+  margin: +#{$gutter}em 0em +#{$gutter}em 0em;
+}
+@for $i from 1 through $columns {
+  .#{$slug}-#{$i} {
+    width: $width + (100% - $width);
+    margin: +#{$gutter}em 0em 0em +#{$gutter}em;
+  }
+}
+/* For Tablets: */
+@media only screen and (min-width: $breakpoint-md) {
+  .container {
+    width: $width;
+    margin: auto;
+  }
+  .columns {
+    display: flex;
+    list-style: none;
+    margin: 0em;
+  }
+  @for $i from 1 through $columns {
+    .#{$slug}-#{$i} {
+      display: flex;
+      flex-basis: $width/$columns * $i;
+      max-width: $width/$columns * $i;
+      margin: +#{$gutter}rem 0rem 0rem +#{$gutter*2}rem;
+    }
+  }
+}
+/* For Desktops: */
+@media only screen and (min-width: $breakpoint-lg) {
+  .container {
+    width: $width;
+    margin: auto;
+  }
+  .columns {
+    display: flex;
+    list-style: none;
+    margin: 0em;
+  }
+  @for $i from 1 through $columns {
+    .#{$slug}-#{$i} {
+      display: flex;
+      flex-basis: $width/$columns * $i;
+      max-width: $width/$columns * $i;
+      margin: +#{$gutter}rem 0rem 0rem +#{$gutter*2}rem;
+    }
+  }
+}
+/* Alignment: */
+//vertical
+.v-top {
+  align-items: flex-start;
+  -webkit-box-align: start;
+}
+.v-bottom {
+  align-items: flex-end;
+  -webkit-box-align: end;
+}
+.v-center {
+  align-items: center;
+  -webkit-box-align: center;
+}
+//horizontal
+.start {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  text-align: start;
+}
+.center {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+}
+.end {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  text-align: end;
+}
