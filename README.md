@@ -2,7 +2,7 @@
 A dead simple, customisable, flexbox-based [griddd](http://griddd.surge.sh/)
 
 ### Get Started
-`https://unpkg.com/griddd@1.0.1/dist/griddd.min.css`
+`https://unpkg.com/griddd@1.0.2/dist/griddd.min.css`
 
 ### Simple Syntax
 ```
