@@ -1,6 +1,6 @@
 {
   "name": "griddd",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A dead simple, customisable, flexbox-based griddd",
   "main": "index.js",
   "scripts": {

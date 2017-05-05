@@ -1,85 +1,122 @@
-$width: 96%; //Container Width
+$width: 100%; //Container Width
+$resize: 100% - 5%; //Container Width
 $gutter: 0.5; //gutter size
 $columns: 12; //number of columns
 $slug: is !default; // change it to col if you're comfortable
-$breakpoint-md:  600px;  // tablets
-$breakpoint-lg: 768px; // desktop
-$breakpoint-xlg: 1600px; //HD
+$breakpoint-md:  48em;  // tablets
+$breakpoint-lg: 56.25em; // desktop
+$breakpoint-xlg: 68.75em; // HD
 
 html,
 body {
   margin: 0px;
 }
+
 /* For mobile phones: */
 .container {
-  width: $width + (100% - $width);
+  width: $resize;
   margin: auto;
+  overflow: hidden;
 }
 .columns {
   display: block;
-  margin: +#{$gutter}em 0em +#{$gutter}em 0em;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -.5rem;
+  margin-left: -.5rem;
 }
 @for $i from 1 through $columns {
   .#{$slug}-#{$i} {
     width: $width + (100% - $width);
     margin: +#{$gutter}em 0em 0em +#{$gutter}em;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
   }
 }
 /* For Tablets: */
 @media only screen and (min-width: $breakpoint-md) {
   .container {
-    width: $width;
+    width: $resize;
     margin: auto;
   }
   .columns {
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    list-style: none;
-    margin: 0em;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -.5rem;
+    margin-left: -.5rem;
   }
   @for $i from 1 through $columns {
     .#{$slug}-#{$i} {
-      display: flex;
-      flex-basis: $width/$columns * $i;
-      max-width: $width/$columns * $i;
-      margin: +#{$gutter}rem 0rem 0rem +#{$gutter*2}rem;
+      flex: 0 0 auto;
+      box-sizing: border-box;
+      -webkit-box-flex: 0;
+      flex-basis: ($resize/$columns * $i)- $gutter;
+      max-width: ($resize/$columns * $i)- $gutter;
+      margin: +#{$gutter}rem 0rem 0rem +#{$gutter/2}rem;
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
     }
   }
 }
 /* For Desktops: */
-@media only screen and (min-width: $breakpoint-lg) {
+@media only screen and (min-width: $breakpoint-xlg) {
   .container {
-    width: $width;
+    width: $resize;
     margin: auto;
   }
   .columns {
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    list-style: none;
-    margin: 0em;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -.5rem;
+    margin-left: -.5rem;
   }
   @for $i from 1 through $columns {
     .#{$slug}-#{$i} {
-      display: flex;
-      flex-basis: $width/$columns * $i;
-      max-width: $width/$columns * $i;
-      margin: +#{$gutter}rem 0rem 0rem +#{$gutter*2}rem;
+      flex: 0 0 auto;
+      box-sizing: border-box;
+      -webkit-box-flex: 0;
+      flex-basis: ($resize/$columns * $i)- $gutter;
+      max-width: ($resize/$columns * $i)- $gutter;
+      margin: +#{$gutter}rem 0rem 0rem +#{$gutter/2}rem;
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
     }
   }
 }
 /* Alignment: */
-//vertical
-.v-top {
-  align-items: flex-start;
-  -webkit-box-align: start;
-}
-.v-bottom {
-  align-items: flex-end;
-  -webkit-box-align: end;
-}
-.v-center {
-  align-items: center;
-  -webkit-box-align: center;
-}
-//horizontal
 .start {
   -webkit-box-pack: start;
   -ms-flex-pack: start;
@@ -98,3 +135,4 @@ body {
   justify-content: flex-end;
   text-align: end;
 }
+
