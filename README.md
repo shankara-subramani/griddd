@@ -21,7 +21,11 @@ A dead simple, customisable, flexbox-based [griddd](http://griddd.surge.sh/)
     <div class="is-4"></div>
   </div>
 </div>
-        
+
 ```
 
+[Codepen Example][c217b723]
+
 Developed by [shankariyerr](https://github.com/shankariyerr)
+
+  [c217b723]: https://codepen.io/guylyons/pen/WjWZRv "Codepen Example"
