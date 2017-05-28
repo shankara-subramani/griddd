@@ -2,10 +2,15 @@
 A dead simple, customisable, flexbox-based [griddd](http://griddd.surge.sh/)
 
 ### Get Started
+
+#### NPM
+`npm install griddd`
+
+#### CDN
 `https://unpkg.com/griddd@1.0.2/dist/griddd.min.css`
 
 ### Simple Syntax
-```
+```html
 <div class="container">
   <div class="columns">
     <div class="is-4"></div>
