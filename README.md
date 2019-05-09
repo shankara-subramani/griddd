@@ -6,12 +6,12 @@ A dead simple, customisable, flexbox-based [griddd](http://griddd.surge.sh/)
 #### NPM
 `npm install griddd`
 
-#### CDN 
-`https://unpkg.com/griddd@1.0.2/dist/griddd.min.css`
+#### CDN
+`https://unpkg.com/griddd@1.0.3/dist/griddd.min.css`
 
 ## Getting started
 #### Link the stylesheet
-`<link rel="stylesheet" href=“https://unpkg.com/griddd@1.0.2/dist/griddd.min.css”>`
+`<link rel="stylesheet" href=“https://unpkg.com/griddd@1.0.3/dist/griddd.min.css”>`
 
 #### Simple Syntax
 ```html
